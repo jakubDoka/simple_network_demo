@@ -6,19 +6,7 @@
 [node name="ship" instance=ExtResource( 1 )]
 collision_mask = 1
 script = ExtResource( 2 )
-max_health = 10
-
-[node name="cam" type="Camera2D" parent="." index="1"]
-current = true
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0
-
-[node name="c" parent="." index="8"]
-textures = {
-"bullet": null
-}
+max_health = 100
 
 [node name="name" type="Label" parent="displays" index="0"]
 margin_left = -24.0001
@@ -28,6 +16,18 @@ margin_bottom = -36.0002
 rect_rotation = -0.6
 __meta__ = {
 "_edit_use_anchors_": false
+}
+
+[node name="cam" type="Camera2D" parent="." index="1"]
+current = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
+[node name="c" parent="." index="9"]
+textures = {
+"bullet": null
 }
 
 [node name="pov" type="Line2D" parent="." index="10"]

@@ -33,13 +33,13 @@ func respawn():
 	vel=Vector2()
 func _ready():
 	acc=Vector2(acc,0)
-	add_to_group("tanks")
+	add_to_group("ships")
 	position=get_viewport_rect().size/2
 	set_physics_process(is_network_master())
 	
 func _physics_process(delta):
 	control(delta)
-	rpc("move",position,rotation)
+	rpc("move",position,rotation,vel)
 func control(delta):
 	pass
 var loadet=true
@@ -63,8 +63,9 @@ master func on_hit(knock):
 	set_health(health-1)
 	rpc("set_health",health)
 
-puppet func move(pos,rot):
+puppet func move(pos,rot,vel):
 	position=pos
 	rotation=rot
+	self.vel=vel
 func _on_reload_timeout():
 	loadet=true
