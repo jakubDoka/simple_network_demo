@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://raynbow.tres" type="Material" id=1]
+[ext_resource path="res://scripts/sprite.gd" type="Script" id=2]
+
+[node name="my_sprite" type="Sprite"]
+material = ExtResource( 1 )
+scale = Vector2( 4, 4 )
+script = ExtResource( 2 )
