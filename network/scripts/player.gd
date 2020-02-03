@@ -1,4 +1,4 @@
-extends "res://scripts/tank_S.gd"
+extends "res://scripts/ship_S.gd"
 var nick="player" setget set_nick
 
 func set_nick(value):
