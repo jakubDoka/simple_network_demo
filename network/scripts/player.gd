@@ -32,8 +32,13 @@ func control(delta):
 	speed=vel*delta
 	var col=move_and_collide(speed)
 	if col:
-		if col.collider.is_in_group("bullets"):
+		var collider=col.collider
+		if collider.is_in_group("bullets"):
 			return
+		elif collider.is_in_group("ships"):
+			collider.rpc("on_hit",vel)
+			vel=collider.vel
+			
 		vel=vel.bounce(col.normal)*.8
 
 
