@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 4.16552 )
 
-[node name="bullet" type="Area2D"]
+[node name="bullet" type="KinematicBody2D"]
 collision_layer = 0
 script = ExtResource( 1 )
 live_time = 2.0
@@ -23,6 +23,4 @@ wait_time = 7.0
 one_shot = true
 
 [node name="ef" type="Tween" parent="."]
-[connection signal="area_entered" from="." to="." method="_on_bullet_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_bullet_area_entered"]
 [connection signal="timeout" from="timer" to="." method="_on_Timer_timeout"]

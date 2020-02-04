@@ -3,7 +3,6 @@
 extends Node
 export(String)var root_name="worm"
 export(Dictionary) var textures
-signal done
 onready var root=find_parent(str(get_network_master()))
 func _ready():
 	textures=textures.duplicate()
