@@ -4,18 +4,20 @@
 [ext_resource path="res://textures/default_skin/bullet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 4.16552 )
+extents = Vector2( 12, 4.166 )
 
 [node name="bullet" type="KinematicBody2D"]
 collision_layer = 0
 script = ExtResource( 1 )
-live_time = 2.0
+live_time = 1.0
 
 [node name="bullet" type="Sprite" parent="."]
+position = Vector2( 12, 0 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( 12, 0 )
 shape = SubResource( 1 )
 
 [node name="timer" type="Timer" parent="."]

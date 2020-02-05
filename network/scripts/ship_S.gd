@@ -47,13 +47,13 @@ var id=0
 func shoot():
 	if loadet:
 		id=(id+1)%1000
-		rpc("make_bullet",str(id))
+		rpc("make_bullet",str(id),rand_range(-.05,.05))
 		loadet=false
 		$reload.start(reload_speed)
 
-sync func make_bullet(id):
+sync func make_bullet(id,inaccuracy=0):
 	var b=bullet.instance()
-	b.start($muzzle.global_position,global_rotation,bullet_speed,speed)
+	b.start($muzzle.global_position,global_rotation+inaccuracy,bullet_speed,speed)
 	b.name=id
 	
 	$c.add_child(b)

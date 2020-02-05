@@ -10,4 +10,4 @@ func _ready():
 	on_change_texture(root.skin)
 func on_change_texture(skin):
 	for texture_name in textures:
-		textures[texture_name]=globals.textures[skin][texture_name]
+		textures[texture_name]=load("res://textures/"+skin+"/"+texture_name+".png")

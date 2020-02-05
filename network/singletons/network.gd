@@ -42,7 +42,6 @@ func _connected_ok():
 	emit_signal("connection_succeeded")
 	start_game()
 func _connected_fail():
-	get_node("/root/world").queue_free()
 	emit_signal("game_ended")
 func _player_disconnected(id):
 	players[id].queue_free()
